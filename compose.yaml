@@ -1,0 +1,21 @@
+services:
+
+  # development container to serve next.js and static files
+  web:
+    image: nginx:latest
+    volumes:
+     - ./nginx:/etc/nginx
+     - ./nxt/out:/usr/share/nginx/html
+    ports:
+     - "80:80"
+     - "443:443"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+
+# docker run -d --name temp_nginx nginx:latest
+# docker cp temp_nginx:/etc/nginx ./nginx-config
+
+
+
+# self-signed certificates:
