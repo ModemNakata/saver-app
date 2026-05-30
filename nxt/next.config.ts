@@ -7,4 +7,9 @@ const nextConfig: NextConfig = {
   output: 'export',
 };
 
+// allow any domain to access development server 
+module.exports = {
+  allowedDevOrigins: ['local.test'], /// dnsmasq local.test
+}
+
 export default nextConfig;
